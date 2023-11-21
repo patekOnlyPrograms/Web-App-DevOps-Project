@@ -57,7 +57,22 @@ To run the application, you simply need to run the `app.py` script in this repos
 
 ### Features
 
-- Delivery Date: This feature flag can be used to help show when the package will be delivered. It adds a delivery date column to the database and adds mapping to it in the backend to allow data transfer to and from the server and client. As well as adding elements to the HTML to show to the user.
+#### Delivery Date 
+- This feature flag can be used to help show when the package will be delivered. It adds a delivery date column to the database and adds mapping to it in the backend to allow data transfer to and from the server and client. As well as adding elements to the HTML to show to the user.
+
+#### Docker Containerisation
+- Created a docker file to help containerize the python application so it can be shared with other.
+
+    ##### Steps
+
+  1. Selected base image from which the application will run and also has capability to run flask
+  2. Created the working directory where the application will work from and allows for web applications
+  3. Copy all files from working directory locally to the directory in the container
+  4. Installed all python dependencies from requirements.txt, while copying the file to the working directory of the container.
+  5. Exposed the ports for 5000 (tcp) for data packet transfer between web browser and the container.
+  6. Command to run the application using CMD.
+
+
 
 ## Contributors 
 
