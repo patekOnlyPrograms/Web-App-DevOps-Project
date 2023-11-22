@@ -58,7 +58,7 @@ To run the application, you simply need to run the `app.py` script in this repos
 ### Features
 
 #### Delivery Date 
-- This feature flag can be used to help show when the package will be delivered. It adds a delivery date column to the database and adds mapping to it in the backend to allow data transfer to and from the server and client. As well as adding elements to the HTML to show to the user.
+This feature flag can be used to help show when the package will be delivered. It adds a delivery date column to the database and adds mapping to it in the backend to allow data transfer to and from the server and client. As well as adding elements to the HTML to show to the user.
 
 #### Docker Containerisation
 Created a docker file to help containerize the python application so it can be shared with other.
