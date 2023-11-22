@@ -73,6 +73,9 @@ Created a docker file to help containerize the python application so it can be s
   6. Command to run the application using CMD.
 
 #### Terraform
+
+##### Network Services
+
 Adds three files to help build infrastructure for Azure. These files include variables, outputs and the main. The main file builds the virtual network and NSG (network security groups). The NSG has two rules to allow Kubernetes and SSH protocol access to the virtual network. 
 
 ## Contributors 
