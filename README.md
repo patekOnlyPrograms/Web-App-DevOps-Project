@@ -61,7 +61,7 @@ To run the application, you simply need to run the `app.py` script in this repos
 - This feature flag can be used to help show when the package will be delivered. It adds a delivery date column to the database and adds mapping to it in the backend to allow data transfer to and from the server and client. As well as adding elements to the HTML to show to the user.
 
 #### Docker Containerisation
-- Created a docker file to help containerize the python application so it can be shared with other.
+Created a docker file to help containerize the python application so it can be shared with other.
 
     ##### Steps
 
@@ -72,7 +72,8 @@ To run the application, you simply need to run the `app.py` script in this repos
   5. Exposed the ports for 5000 (tcp) for data packet transfer between web browser and the container.
   6. Command to run the application using CMD.
 
-
+#### Terraform
+Adds three files to help build infrastructure for Azure. These files include variables, outputs and the main. The main file builds the virtual network and NSG (network security groups). The NSG has two rules to allow Kubernetes and SSH protocol access to the virtual network. 
 
 ## Contributors 
 
