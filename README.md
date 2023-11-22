@@ -7,6 +7,7 @@ Welcome to the Web App DevOps Project repo! This application allows you to effic
 - [Features](#features)
 - [Getting Started](#getting-started)
 - [Technology Stack](#technology-stack)
+- [Change Notes](#change-notes)
 - [Contributors](#contributors)
 - [License](#license)
 
