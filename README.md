@@ -63,7 +63,7 @@ To run the application, you simply need to run the `app.py` script in this repos
 #### Docker Containerisation
 Created a docker file to help containerize the python application so it can be shared with other.
 
-    ##### Steps
+##### Steps
 
   1. Selected base image from which the application will run and also has capability to run flask
   2. Created the working directory where the application will work from and allows for web applications
