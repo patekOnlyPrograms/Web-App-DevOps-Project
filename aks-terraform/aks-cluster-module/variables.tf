@@ -25,7 +25,7 @@ variable "kubernetes_version" {
 variable "service_principal_client_id" {
   description = "Variable that provides the Client ID"
   type = string
-  default = "5eb1caa2-48eb-4186-8f02-36f64f1c6ce6"
+  default = "c05936a9-f015-4ad8-b623-a3197ee6d6d4"
 }
 
 variable "service_principal_secret" {
