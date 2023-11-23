@@ -34,3 +34,22 @@ variable "service_principal_secret" {
   default = "OO88Q~vURcyciXgyT4RmdFgtIkDYaSsYwk1tca1B"
 }
 
+variable "resource_group_name" {
+  description = "This is the resource group where the application will be stored and used from"
+  type = string
+}
+
+variable "vnet_id" {
+  description = "This is the id of the virtual network where the network will be situated"
+  type = string
+}
+
+variable "control_plane_subnet_id" {
+  description = "This is the id of the control plane subnet"
+  type = string
+}
+
+variable "worker_node_subnet_id" {
+  description = "This is the id of the worker node subnet"
+  type = string
+}
