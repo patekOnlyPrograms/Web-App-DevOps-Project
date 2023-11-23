@@ -38,8 +38,6 @@ resource "azurerm_kubernetes_cluster" "example" {
     vm_size    = "Standard_D2_v2"
   }
 
-  identity {
-    type = "SystemAssigned"
-  }
+  depends_on = [azurerm_resource_group.resource-group]
 
 }

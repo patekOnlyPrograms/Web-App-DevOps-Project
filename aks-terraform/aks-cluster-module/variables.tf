@@ -25,13 +25,13 @@ variable "kubernetes_version" {
 variable "service_principal_client_id" {
   description = "Variable that provides the Client ID"
   type = string
-  #default = "5eb1caa2-48eb-4186-8f02-36f64f1c6ce6"
+  default = "5eb1caa2-48eb-4186-8f02-36f64f1c6ce6"
 }
 
 variable "service_principal_secret" {
   description = "Variable that supplies the Client Secret for the service principal"
   type = string
-  #default = "OO88Q~vURcyciXgyT4RmdFgtIkDYaSsYwk1tca1B"
+  default = "OO88Q~vURcyciXgyT4RmdFgtIkDYaSsYwk1tca1B"
 }
 
 variable "resource_group_name" {
