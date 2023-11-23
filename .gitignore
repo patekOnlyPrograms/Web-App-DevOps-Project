@@ -2,3 +2,4 @@
 /aks-terraform/networking-module/.terraform.lock.hcl
 /aks-terraform/networking-module/terraform.tfstate
 /aks-terraform/networking-module/terraform.tfstate.backup
+/aks-terraform/aks-cluster-module/.terraform/
