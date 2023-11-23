@@ -22,17 +22,6 @@ variable "kubernetes_version" {
   default = "1.28.3"
 }
 
-variable "service_principal_client_id" {
-  description = "Variable that provides the Client ID"
-  type = string
-  default = "c05936a9-f015-4ad8-b623-a3197ee6d6d4"
-}
-
-variable "service_principal_secret" {
-  description = "Variable that supplies the Client Secret for the service principal"
-  type = string
-  default = "OO88Q~vURcyciXgyT4RmdFgtIkDYaSsYwk1tca1B"
-}
 
 variable "resource_group_name" {
   description = "This is the resource group where the application will be stored and used from"

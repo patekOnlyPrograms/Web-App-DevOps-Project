@@ -5,6 +5,7 @@
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/aks-terraform/aks-cluster-module/.terraform" />
       <excludeFolder url="file://$MODULE_DIR$/aks-terraform/networking-module/.terraform" />
     </content>
     <orderEntry type="jdk" jdkName="devops" jdkType="Python SDK" />

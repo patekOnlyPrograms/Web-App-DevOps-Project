@@ -10,8 +10,8 @@ terraform {
 provider "azurerm" {
   features {}
   subscription_id = "37a9fc7f-c9d6-4a9b-a69d-ab2d121cfbc7"
-  client_id       = var.service_principal_client_id
-  client_secret   = var.service_principal_secret
+  client_id       = "c05936a9-f015-4ad8-b623-a3197ee6d6d4"
+  client_secret   = "WhL8Q~dsq4uj7MTo_pfo9sFMVWbpSWIhm-iHba.X"
   tenant_id       = "5eb1caa2-48eb-4186-8f02-36f64f1c6ce6"
 }
 
@@ -26,11 +26,6 @@ resource "azurerm_kubernetes_cluster" "example" {
   resource_group_name = azurerm_resource_group.resource-group.name
   dns_prefix          = var.dns_prefix
   kubernetes_version = var.kubernetes_version
-
-  service_principal {
-    client_id     = var.service_principal_client_id
-    client_secret = var.service_principal_secret
-  }
 
   default_node_pool {
     name       = "default"
