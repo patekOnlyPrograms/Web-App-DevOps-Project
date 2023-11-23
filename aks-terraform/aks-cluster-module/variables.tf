@@ -18,8 +18,8 @@ variable "dns_prefix" {
 
 variable "kubernetes_version" {
   description = "Variable that specifies which Kubernetes version"
-  type = number
-  default = 1.28.3
+  type = string
+  default = "1.28.3"
 }
 
 variable "service_principal_client_id" {
