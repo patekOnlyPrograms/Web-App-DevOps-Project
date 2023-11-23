@@ -11,7 +11,7 @@ provider "azurerm" {
   features {}
   subscription_id = "37a9fc7f-c9d6-4a9b-a69d-ab2d121cfbc7"
   client_id       = "c05936a9-f015-4ad8-b623-a3197ee6d6d4"
-  client_secret   = "OO88Q~vURcyciXgyT4RmdFgtIkDYaSsYwk1tca1B"
+  client_secret   = "Aga8Q~1cfAlKfEIyPfw49E.t2Na3xiFaBaeHxcjQ"
   tenant_id       = "5eb1caa2-48eb-4186-8f02-36f64f1c6ce6"
 }
 
@@ -32,15 +32,15 @@ resource "azurerm_virtual_network" "vnet-example" {
 }
 
 resource "azurerm_subnet" "control_plane" {
-  address_prefixes     = ["10.0.1.0/16"]
-  name                 = "example control plane"
+  address_prefixes     = ["10.0.1.0/24"]
+  name                 = "control-plane-subnet"
   resource_group_name  = var.resource_group_name
   virtual_network_name = azurerm_virtual_network.vnet-example.name
 }
 
 resource "azurerm_subnet" "worker_node" {
-  address_prefixes     = ["10.0.1.0/16"]
-  name                 = "example worker node subnet"
+  address_prefixes     = ["10.0.2.0/24"]
+  name                 = "worker-node-subnet"
   resource_group_name  = var.resource_group_name
   virtual_network_name = azurerm_virtual_network.vnet-example.name
 }
@@ -57,7 +57,7 @@ resource "azurerm_network_security_group" "network_security_group" {
     priority = 100
     direction = "Inbound"
     access = "Allow"
-    protocol = "TCP"
+    protocol = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "*"
     source_address_prefix      = "${chomp(data.http.myip.body)}/32"
@@ -69,7 +69,7 @@ resource "azurerm_network_security_group" "network_security_group" {
     priority = 101
     direction = "Inbound"
     access = "Allow"
-    protocol = "SSH"
+    protocol = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "*"
     source_address_prefix      = "${chomp(data.http.myip.body)}/32"
