@@ -79,6 +79,18 @@ Created a docker file to help containerize the python application so it can be s
 
 Adds three files to help build infrastructure for Azure. These files include variables, outputs and the main. The main file builds the virtual network and NSG (network security groups). The NSG has two rules to allow Kubernetes and SSH protocol access to the virtual network. 
 
+##### AKS Cluster
+
+Adds files required to set up Azure Kubernetes Service (AKS). These files reference
+outputs from the networking module to allow for dynamic inputs. Using the main file
+from the root project. This module set ups the node pool and the parameters to get
+the cluster working.
+
+##### Main
+
+Adds main.tf file to add the required parameters to create the components which we
+defined in the previous modules.
+
 ## Contributors 
 
 - [Maya Iuga]([https://github.com/yourusername](https://github.com/maya-a-iuga))
