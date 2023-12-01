@@ -100,11 +100,16 @@ defined in the previous modules.
 Used inputs:
 
 - Networking:
-   1. Resource Group: container to hold the related resources for the Azure solution specifically the AKS cluster
+  1. Resource Group: container to hold the related resources for the Azure solution specifically the AKS cluster
   2. Location: Where the resource group will be based or the servers
   3. Vnet address space: This is the IP address where all communication to and out of the resource group will go
 
-
+- AKS Cluster
+  1. Cluster name: this is the name of the cluster
+  2. Cluster location: where the cluster will be located
+  3. Dns prefix: This will have the dns-prefix of the cluster, so we can access it
+  4. Kubernetes version: This is the version which the kubernetes version will run on
+  5. Service principal client ID and secret: This will hold the necessary information for setting up the networking and aks cluster modules.
 
 
 
