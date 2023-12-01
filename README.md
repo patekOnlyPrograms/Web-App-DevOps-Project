@@ -111,7 +111,32 @@ Used inputs:
   4. Kubernetes version: This is the version which the kubernetes version will run on
   5. Service principal client ID and secret: This will hold the necessary information for setting up the networking and aks cluster modules.
 
+#### Kubernetes
 
+##### Creating Deployment and Service Configurations
+
+First created the kind of kubernetes service to be deployed, this included the name of the
+application and the docker container to run the docker container. Used a rolling update 
+strategy to release new versions of the applications by decommissioning one container for 
+update and the other being used. Set minReadySeconds to 10 allow a newly created Pod 
+should be ready without any of its containers crashing, for it to be considered available.
+
+##### Testing application
+
+Tested the application by create port forwarding on ports 5000 using TCP protocol for 
+testing the website on local host. This allows us to open the website and then test 
+functionality such as adding orders and viewing orders. 
+
+
+##### Distribution of application without port forwarding
+
+To distribute this application without port forwarding I would use ingress service to allow
+access to the cluster using HTTPS or HTTP. This will remove the need for port forwarding 
+while also securing our cluster using load balancer to protect against DDOS attacks or 
+distribute loads across the clusters. To increase security I would also use kubernetes 
+secrets to hold information such as service principle credentials. 
+
+[//]: # (https://www.weave.works/blog/deploying-an-application-on-kubernetes-from-a-to-z)
 
 ## Contributors 
 
