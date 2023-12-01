@@ -91,6 +91,23 @@ the cluster working.
 Adds main.tf file to add the required parameters to create the components which we
 defined in the previous modules.
 
+###### Creating the service principle
+
+![Service Principle](Images/ServicePrinciple.png "Service Principle")
+
+###### Inputs used
+
+Used inputs:
+
+- Networking:
+   1. Resource Group: container to hold the related resources for the Azure solution specifically the AKS cluster
+  2. Location: Where the resource group will be based or the servers
+  3. Vnet address space: This is the IP address where all communication to and out of the resource group will go
+
+
+
+
+
 ## Contributors 
 
 - [Maya Iuga]([https://github.com/yourusername](https://github.com/maya-a-iuga))

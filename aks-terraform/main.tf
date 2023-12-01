@@ -9,10 +9,10 @@ terraform {
 
 provider "azurerm" {
   features {}
-  client_id       = ""
-  client_secret   = ""
-  subscription_id = ""
-  tenant_id       = ""
+  client_id       = "0f9a87db-9c63-4d0c-9ce6-89e243da1d2d"
+  client_secret   = "Yje8Q~YOxS1nu3Cl6lino7cpYZCOOfBxGhoGFdpt"
+  subscription_id = "60772c8b-e7d2-476a-8623-9ed386b51689"
+  tenant_id       = "47d4542c-f112-47f4-92c7-a838d8a5e8ef"
 }
 
 module "networking" {
@@ -35,8 +35,8 @@ module "aks-cluster" {
   cluster_location                = "UK South"
   dns_prefix                      = "aks-practice"
   kubernetes_version              = "1.28.3"
-  service_principal_client_id     = "c05936a9-f015-4ad8-b623-a3197ee6d6d4"
-  service_principal_client_secret = "QmF8Q~NnytC.nMvaYIbmjbJo.WNgQP2EPSxEqbOg"
+  service_principal_client_id     = "0f9a87db-9c63-4d0c-9ce6-89e243da1d2d"
+  service_principal_client_secret = "Yje8Q~YOxS1nu3Cl6lino7cpYZCOOfBxGhoGFdpt"
 
 
   #Input variables referencing output from networking module
