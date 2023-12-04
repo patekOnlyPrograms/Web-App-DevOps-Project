@@ -8,7 +8,7 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-  parrallel: 1
+  #parrallel: 1
 
 steps:
 - task: Docker@2
