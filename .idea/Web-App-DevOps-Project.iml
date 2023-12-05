@@ -7,6 +7,7 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/aks-terraform/aks-cluster-module/.terraform" />
       <excludeFolder url="file://$MODULE_DIR$/aks-terraform/networking-module/.terraform" />
+      <excludeFolder url="file://$MODULE_DIR$/aks-terraform/.terraform" />
     </content>
     <orderEntry type="jdk" jdkName="devops" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -24,4 +24,4 @@ steps:
     action: 'deploy'
     connectionType: 'kubernetesServiceConnection'
     kubernetesServiceConnection: 'AKSConnection'
-    manifests: '$(System.ArtifactsDirectory)/application-manifest.yml'
+    manifests: 'application-manifest.yml'
