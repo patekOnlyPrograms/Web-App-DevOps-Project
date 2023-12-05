@@ -24,4 +24,3 @@ steps:
     action: 'deploy'
     connectionType: 'kubernetesServiceConnection'
     kubernetesServiceConnection: 'AKSConnection'
-    manifests: 'application-manifest.yml'
