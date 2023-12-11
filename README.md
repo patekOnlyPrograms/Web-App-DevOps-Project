@@ -164,6 +164,29 @@ to create the pods for deployment.
 
 ![Docker Build Pipeline](Images/DockerBuildPipeline.png "Docker Build Pipeline")
 
+###### Release Pipelines
+
+This pipeline is used to deploy the Docker images to the AKS cluster to keep up with 
+CI/CD which are run when new code is pushed to the repository. This is done using
+resource managers as it changes the resources in your resources group.
+
+![AKS Release Pipeline](Images/AKSReleasePipeline.png "AKS Release Pipeline")
+
+
+###### Release Pipelines
+
+Tested functionality by changing code in the html code to see if pods will update when code
+gets updated as required by CI/CD. I build the Docker Images and pushed them and then 
+pushed the updated code the GitHub to update the deployments on the AKS cluster. Then used
+port forwarding to access the website locally.
+
+![Old Pods](Images/OLD_PODS.png "Old Pods")
+
+![NEW Pods](Images/NEW_PODS.png "New Pods")
+
+![AKS Pods](Images/kubectlPods.png "AKS Pods")
+
+
 ## Contributors 
 
 - [Maya Iuga]([https://github.com/yourusername](https://github.com/maya-a-iuga))
