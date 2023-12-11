@@ -138,6 +138,32 @@ secrets to hold information such as service principle credentials.
 
 [//]: # (https://www.weave.works/blog/deploying-an-application-on-kubernetes-from-a-to-z)
 
+#### CI/CD Pipelines with Azure DevOps
+
+Use of CI/CD pipelines to keep the application as recent as possible and allow for latest
+bug fixes to be applied to the application. This is all achieved by using Azure DevOps to
+facilitate the process of CI/CD. 
+
+Added billing to utilise parallel jobs, created service connections for the project. These
+connections included Azure, GitHub, and Docker Hub.
+
+1. Azure: For access to the AKS cluster for deployment using the cluster created using 
+Terraform.
+2. GitHub: For Azure to fetch new code and use pipelines to run deployments using the code
+for CI/CD. This is the source repository where new code goes for updates then gets deployed
+to the AKS cluster which I can access using local host to access it.
+3. Docker Hub: Fetch new code when created using the docker image made and pushed to hub. 
+This allows the application to be updated when code changes are made.
+
+##### Build and Release Pipelines
+
+###### Build Pipelines
+
+This pipeline is used to create the Docker image which will be used by your AKS cluster
+to create the pods for deployment. 
+
+![Docker Build Pipeline](Images/DockerBuildPipeline.png "Docker Build Pipeline")
+
 ## Contributors 
 
 - [Maya Iuga]([https://github.com/yourusername](https://github.com/maya-a-iuga))
