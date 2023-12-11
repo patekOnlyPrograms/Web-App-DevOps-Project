@@ -187,6 +187,41 @@ port forwarding to access the website locally.
 ![AKS Pods](Images/kubectlPods.png "AKS Pods")
 
 
+#### AKS Cluster Monitoring
+
+
+##### Metric explorer
+
+!["AverageNodeCpuUsage"](Images/AverageNodeCpuUsage.png "AverageNodeCpuUsage")
+
+!["AveragePodCount"](Images/AveragePodCount.png "AveragePodCount")
+
+
+!["DiskUsedPercentage"](Images/DiskUsedPercentage.png "DiskUsedPercentage")
+
+!["BytesReadAndWrittenPerSecond"](Images/BytesReadAndWrittenPerSecond.png "BytesReadAndWrittenPerSecond")
+
+##### Log Analytics
+
+
+
+!["AverageNodeMemoryuseagePercentagePerMinute"](Images/AverageNodeMemoryuseagePercentagePerMinute.png)
+
+!["PodsCoundWithPhase"](Images/PodsCoundWithPhase.png "PodsCoundWithPhase")
+
+
+!["WarningInContainerLogs"](Images/WarningInContainerLogs.png "WarningInContainerLogs")
+
+
+No events in Monitoring Kubernetes Events
+
+
+##### Alarms and Alerts
+
+
+!["AlertDiskUsage"](Images/AlertDiskUsage.png "AlertDiskUsage")
+!["CPUAndMemoryAlertRules"](Images/CPUAndMemoryAlertRules.png "CPUAndMemoryAlertRules")
+
 ## Contributors 
 
 - [Maya Iuga]([https://github.com/yourusername](https://github.com/maya-a-iuga))
