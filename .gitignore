@@ -3,3 +3,4 @@
 /aks-terraform/.terraform/
 azure.txt
 managedIdentity.txt
+envFile.txt
