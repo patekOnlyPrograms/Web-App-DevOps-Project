@@ -3,18 +3,29 @@ from sqlalchemy import create_engine, Column, Integer, String, DateTime
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
+from azure.identity import ManagedIdentityCredential
+from azure.keyvault.secrets import SecretClient
 import pyodbc
 import os
 
 # Initialise Flask App
 app = Flask(__name__)
 
+credential = ManagedIdentityCredential(client_id="03912760-cd8c-4ee2-9e7e-aa0c6894b313")
+secret_client = SecretClient(vault_url="https://web-app-devops-key-vault.vault.azure.net/",credential=credential)
+
 # database connection 
-server = 'devops-project-server.database.windows.net'
-database = 'orders-db'
-username = 'maya'
-password = 'AiCore1237'
+server_value = secret_client.get_secret("server") #'devops-project-server.database.windows.net'
+server = server_value.value
+database_value = secret_client.get_secret("database") #'orders-db'
+database = database_value.value
+username_value = secret_client.get_secret("username")#'maya'
+username = username_value.value
+password_value = secret_client.get_secret("password") #'AiCore1237'
+password = password_value.value
 driver = '{ODBC Driver 18 for SQL Server}'
+
+#$ az role assignment create --role "Key Vault Secrets Officer" --assignee 1746aaab-ce05-47f2-82ca-d03a7e1ea100 --scope /subscriptions/60772c8b-e7d2-476a-8623-9ed386b51689/resourceGroups/networking-rg/providers/Microsoft.KeyVault/vaults/web-app-devops-key-vault
 
 # Create the connection string
 connection_string = f'Driver={driver};\
