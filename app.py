@@ -11,7 +11,7 @@ import os
 # Initialise Flask App
 app = Flask(__name__)
 
-credential = ManagedIdentityCredential(client_id="03912760-cd8c-4ee2-9e7e-aa0c6894b313")
+credential = ManagedIdentityCredential()
 secret_client = SecretClient(vault_url="https://web-app-devops-key-vault.vault.azure.net/",credential=credential)
 
 # database connection 
