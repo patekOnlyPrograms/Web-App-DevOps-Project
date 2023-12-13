@@ -11,21 +11,23 @@ import os
 # Initialise Flask App
 app = Flask(__name__)
 
-credential = ManagedIdentityCredential(client_id="f2524e44-6545-4565-8b7b-325503d30baa")
-secret_client = SecretClient(vault_url="https://web-app-devops-key-vault.vault.azure.net/",credential=credential)
+# client_id="f2524e44-6545-4565-8b7b-325503d30baa"
+
+credential = ManagedIdentityCredential()
+secret_client = SecretClient(vault_url="https://web-app-devops-key-vault.vault.azure.net/", credential=credential)
 
 # database connection 
-server_value = secret_client.get_secret("server") #'devops-project-server.database.windows.net'
+server_value = secret_client.get_secret("server")  # 'devops-project-server.database.windows.net'
 server = server_value.value
-database_value = secret_client.get_secret("database") #'orders-db'
+database_value = secret_client.get_secret("database")  # 'orders-db'
 database = database_value.value
-username_value = secret_client.get_secret("username")#'maya'
+username_value = secret_client.get_secret("username")  # 'maya'
 username = username_value.value
-password_value = secret_client.get_secret("password") #'AiCore1237'
+password_value = secret_client.get_secret("password")  # 'AiCore1237'
 password = password_value.value
 driver = '{ODBC Driver 18 for SQL Server}'
 
-#$ az role assignment create --role "Key Vault Secrets Officer" --assignee 1746aaab-ce05-47f2-82ca-d03a7e1ea100 --scope /subscriptions/60772c8b-e7d2-476a-8623-9ed386b51689/resourceGroups/networking-rg/providers/Microsoft.KeyVault/vaults/web-app-devops-key-vault
+# $ az role assignment create --role "Key Vault Secrets Officer" --assignee 1746aaab-ce05-47f2-82ca-d03a7e1ea100 --scope /subscriptions/60772c8b-e7d2-476a-8623-9ed386b51689/resourceGroups/networking-rg/providers/Microsoft.KeyVault/vaults/web-app-devops-key-vault
 
 # Create the connection string
 connection_string = f'Driver={driver};\
@@ -46,6 +48,7 @@ Session = sessionmaker(bind=engine)
 
 # Define the Order data model
 Base = declarative_base()
+
 
 class Order(Base):
     __tablename__ = 'orders'
@@ -74,7 +77,8 @@ def display_orders():
     session = Session()
 
     # Fetch a subset of data for the current page
-    current_page_orders = session.query(Order).order_by(Order.user_id, Order.date_uuid).slice(start_index,end_index).all()
+    current_page_orders = session.query(Order).order_by(Order.user_id, Order.date_uuid).slice(start_index,
+                                                                                              end_index).all()
 
     # Calculate the total number of pages
     total_rows = session.query(Order).count()
