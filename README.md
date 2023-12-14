@@ -230,6 +230,16 @@ to the key vault by adding a RBAC role to enable control of the vault to access 
 which we will use in the code. I gave it Key Vault Administrator granting full control of the key vault to access
 policies, configure advanced settings and perform any operation within the key vault.
 
+##### Secrets stored in key vault
+
+1. Server URL: Defines where the database is in the docker container to access and add data
+2. Database Name: Provides the database name for the application to find the correct database within the server to 
+access data
+3. Username and Password: Access credentials to authenticate access to the database using the credentials defined 
+above.
+
+These secrets are used to create the connection string to allow the application access to the database.
+
 !["KeySecretsInCode"](Images/KeySecretsInCode.png "KeySecretsInCode")
 
 !["KeySecretsInAzure"](Images/KeySecretsInAzure.png "KeySecretsInAzure")
