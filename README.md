@@ -245,6 +245,10 @@ These secrets are used to create the connection string to allow the application 
 !["KeySecretsInAzure"](Images/KeySecretsInAzure.png "KeySecretsInAzure")
 
 
+##### Integration of AKS to Key Vault
+
+
+
 ##### Overview of the system architecture
 
 !["DevOps Pipeline Architecture"](Images/DevOps%20Pipeline%20Architecture.png "DevOps Pipeline Architecture")
