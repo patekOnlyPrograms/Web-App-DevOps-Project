@@ -14,11 +14,8 @@ import os
 app = Flask(__name__)
 
 load_dotenv()
-client_id_string= os.getenv('AZURE_CLIENT_ID')
-credential = ManagedIdentityCredential()
-"""print(client_id_string)
-print(type(client_id_string))
-print(type(credential))"""
+client_id_string = os.environ.get('AZURE_CLIENT_ID')
+credential = ManagedIdentityCredential(client_id=client_id_string)
 secret_client = SecretClient(vault_url="https://web-app-devops-key-vault.vault.azure.net/", credential=credential)
 
 
