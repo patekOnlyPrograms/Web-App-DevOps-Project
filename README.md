@@ -222,6 +222,25 @@ No events in Monitoring Kubernetes Events
 !["AlertDiskUsage"](Images/AlertDiskUsage.png "AlertDiskUsage")
 !["CPUAndMemoryAlertRules"](Images/CPUAndMemoryAlertRules.png "CPUAndMemoryAlertRules")
 
+
+#### AKS Integration with Azure Key Vault for secrets management
+
+Created a keyvault to secrets within the application to avoid having secrets in the project. I also added the access
+to the key vault by adding a RBAC role to enable control of the vault to access the secrets. Then we create the secrets
+which we will use in the code. I gave it Key Vault Administrator granting full control of the key vault to access
+policies, configure advanced settings and perform any operation within the key vault.
+
+!["KeySecretsInCode"](Images/KeySecretsInCode.png "KeySecretsInCode")
+
+!["KeySecretsInAzure"](Images/KeySecretsInAzure.png "KeySecretsInAzure")
+
+
+##### Overview of the system architecture
+
+!["DevOps Pipeline Architecture"](Images/DevOps%20Pipeline%20Architecture.png "DevOps Pipeline Architecture")
+
+
+
 ## Contributors 
 
 - [Maya Iuga]([https://github.com/yourusername](https://github.com/maya-a-iuga))
