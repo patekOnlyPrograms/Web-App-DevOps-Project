@@ -273,7 +273,7 @@ environment variable.
 
 !["UpdatedPythonCode"](Images/UpdatedPythonCode.png "UpdatedPythonCode")
 
-
+###### Kubernetes Configuration 
 
 Steps:
 
