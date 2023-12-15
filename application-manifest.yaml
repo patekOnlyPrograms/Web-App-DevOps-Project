@@ -18,6 +18,12 @@ spec:
           imagePullPolicy: Always
           ports:
           - containerPort: 5000
+          env:
+            - name: AZURE_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: azureclientid
+                  key: AZURE_CLIENT_ID
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -36,3 +42,5 @@ spec:
       port: 80
       targetPort: 5000
   type: ClusterIP
+---
+apiVersion: v1
