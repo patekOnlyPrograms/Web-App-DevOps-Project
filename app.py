@@ -30,7 +30,7 @@ password_value = secret_client.get_secret("password")  # 'AiCore1237'
 password = password_value.value
 driver = '{ODBC Driver 18 for SQL Server}'
 
-# $ az role assignment create --role "Key Vault Secrets Officer" --assignee 1746aaab-ce05-47f2-82ca-d03a7e1ea100 --scope /subscriptions/60772c8b-e7d2-476a-8623-9ed386b51689/resourceGroups/networking-rg/providers/Microsoft.KeyVault/vaults/web-app-devops-key-vault
+
 
 # Create the connection string
 connection_string = f'Driver={driver};\
