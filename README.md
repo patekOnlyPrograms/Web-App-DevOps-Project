@@ -37,6 +37,9 @@ For the application to succesfully run, you need to install the following packag
 - pyodbc (version 4.0.39)
 - SQLAlchemy (version 2.0.21)
 - werkzeug (version 2.2.3)
+- azure-identity (version 1.15.0)
+- azure-keyvault-secrets (version 4.7.0)
+- python-dotenv (version: 1.0.0)
 
 ### Usage
 
@@ -247,7 +250,47 @@ These secrets are used to create the connection string to allow the application 
 
 ##### Integration of AKS to Key Vault
 
+!["ManagedIdentityConnectionToKeyVault"](Images/ManagedIdentityConnectionToKeyVault.png)
 
+Created a managed identity and assigned it the role of Key Vault Secrets Officer and added
+the key vault resource to connect the identity to the key vault. The managed identity will
+have an clientID this will be used in the application code to give access to the key vaults
+secrets. I did it manually via the portal as the Azure CLI way caused issues and created 
+a managed identity with the ClientID which was established to the key vault. 
+
+##### Change of code to incorporate the changes
+
+###### Python Code
+
+To avoid exposing the ClientID on GitHub and hard coding the ClientID in the application.
+I had to add three packages to the requirements and the code. The two being azure identity
+and azure key vault secrets which allow the python code to create a credential object 
+using the ClientID. Which is combined with the vault url to create a secret client to 
+access the secrets in the key vault. Furthermore, I added a package to access environments
+variables from the OS to get access to the ClientID. The load_dotenv() will find the 
+environment variables and load them to the disk. The next line will the find the 
+environment variable.  
+
+!["UpdatedPythonCode"](Images/UpdatedPythonCode.png "UpdatedPythonCode")
+
+
+
+Steps:
+
+1. Create a generic secret using the kubectl. Then add the clientID in plain text. This 
+will be base64 encoded so it won't be easily accessible.
+
+```
+kubectl create secret generic azureclientid  --from-literal=AZURE_CLIENT_ID=""
+```
+
+2. Finally, to add the environment variable when the kubernetes builds the pods we have to
+add an environment variable to the OS. Which is done using application manifest. The env
+definition will include the name of the secret used in the application code and the value 
+of the secret defined in the kubectl for access by the application code.
+
+
+!["UpdatedApplicationManifest"](Images/UpdatedApplicationManifest.png "UpdatedApplicationManifest")
 
 ##### Overview of the system architecture
 
