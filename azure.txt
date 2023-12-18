@@ -1,2 +1,0 @@
-az ad sp create-for-rbac -n devopsProject --role "Contributor" --scopes /subscriptions/60772c8b-e7d2-476a-8623-9ed386b51689/resourceGroups/resource-group
-az ad sp create-for-rbac -n devopsProject --role Contributor --scopes /subscriptions/60772c8b-e7d2-476a-8623-9ed386b51689/resourceGroups/resource-group
